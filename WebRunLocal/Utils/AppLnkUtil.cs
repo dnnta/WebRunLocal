@@ -111,7 +111,7 @@ namespace WebRunLocal.Utils
             //如果没有则创建
             if (shortcutPaths.Count < 1)
             {
-                CreateShortcut(desktopPath, "WRL", appAllPath);
+                CreateShortcut(desktopPath, "ARC标签打印服务", appAllPath);
             }
         }
     }

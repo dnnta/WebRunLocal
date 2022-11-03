@@ -33,7 +33,7 @@ namespace WebRunLocal
 
             //设置折叠面板按钮绑定的窗体
             buttonSetting.Tag = new SettingForm();
-            buttonAbout.Tag = new AboutForm();
+           // buttonAbout.Tag = new AboutForm();
             FoldButtonClick(buttonSetting, e);
 
             //启动WRL服务并进行系统初始化

@@ -55,11 +55,12 @@ namespace WebRunLocal.Utils
             {
                 bool _exist = false;
                 RegistryKey local = Registry.LocalMachine;
-                RegistryKey runs = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                RegistryKey runs = local.OpenSubKey(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run", true);
                 if (runs == null)
                 {
                     RegistryKey key2 = local.CreateSubKey("SOFTWARE");
-                    RegistryKey key3 = key2.CreateSubKey("Microsoft");
+                    RegistryKey key64 = key2.CreateSubKey("WOW6432Node");
+                    RegistryKey key3 = key64.CreateSubKey("Microsoft");
                     RegistryKey key4 = key3.CreateSubKey("Windows");
                     RegistryKey key5 = key4.CreateSubKey("CurrentVersion");
                     RegistryKey key6 = key5.CreateSubKey("Run");
@@ -75,7 +76,6 @@ namespace WebRunLocal.Utils
                     }
                 }
                 return _exist;
-
             }
             catch
             {
@@ -95,10 +95,10 @@ namespace WebRunLocal.Utils
             try
             {
                 RegistryKey local = Registry.LocalMachine;
-                RegistryKey key = local.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+                RegistryKey key = local.OpenSubKey(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run", true);
                 if (key == null)
                 {
-                    local.CreateSubKey("SOFTWARE//Microsoft//Windows//CurrentVersion//Run");
+                    local.CreateSubKey("SOFTWARE//WOW6432Node//Microsoft//Windows//CurrentVersion//Run");
                 }
                 //若开机自启动则添加键值对
                 if (isStart)

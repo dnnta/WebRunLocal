@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.SelfHost;
 
 namespace WebRunLocal.Services
@@ -29,6 +30,9 @@ namespace WebRunLocal.Services
             this.Port = port;
 
             var config = new HttpSelfHostConfiguration($"http://0.0.0.0:{this.Port}");
+
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
 
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{action}");

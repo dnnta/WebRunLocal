@@ -11,3 +11,17 @@ E:\MySpace\GitHub\WebRunLocal\AutoUpdate\obj\Debug\AutoUpdateClient.csproj.CoreC
 E:\MySpace\GitHub\WebRunLocal\AutoUpdate\obj\Debug\AutoUpdateClient.csproj.CopyComplete
 E:\MySpace\GitHub\WebRunLocal\AutoUpdate\obj\Debug\WRL自动更新.exe
 E:\MySpace\GitHub\WebRunLocal\AutoUpdate\obj\Debug\WRL自动更新.pdb
+D:\SouceCode\AutoUpdateClient\bin\Debug\WRL自动更新.exe.config
+D:\SouceCode\AutoUpdateClient\bin\Debug\WRL自动更新.exe
+D:\SouceCode\AutoUpdateClient\bin\Debug\WRL自动更新.pdb
+D:\SouceCode\AutoUpdateClient\bin\Debug\SharpCompress.dll
+D:\SouceCode\AutoUpdateClient\bin\Debug\SuperSocket.ClientEngine.dll
+D:\SouceCode\AutoUpdateClient\bin\Debug\WebSocket4Net.dll
+D:\SouceCode\AutoUpdateClient\obj\Debug\AutoUpdateClient.csprojAssemblyReference.cache
+D:\SouceCode\AutoUpdateClient\obj\Debug\AutoUpdateClient.Form1.resources
+D:\SouceCode\AutoUpdateClient\obj\Debug\AutoUpdateClient.Properties.Resources.resources
+D:\SouceCode\AutoUpdateClient\obj\Debug\AutoUpdateClient.csproj.GenerateResource.cache
+D:\SouceCode\AutoUpdateClient\obj\Debug\AutoUpdateClient.csproj.CoreCompileInputs.cache
+D:\SouceCode\AutoUpdateClient\obj\Debug\AutoUpdateClient.csproj.CopyComplete
+D:\SouceCode\AutoUpdateClient\obj\Debug\WRL自动更新.exe
+D:\SouceCode\AutoUpdateClient\obj\Debug\WRL自动更新.pdb
