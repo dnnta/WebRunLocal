@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -16,6 +17,35 @@ namespace WebRunLocal.Controllers
     [RoutePrefix("api/print")]
     public class PrintController : ApiController
     {
+        [Route("remote")]
+        [HttpPost]
+        [ActionFilter]
+        public IHttpActionResult PrintItem([FromBody] JObject jsonParam)
+        {
+            string printer_name = jsonParam["printer_name"].ToString();
+            string file_name = jsonParam["template_file"].ToString();
+            string print_count = jsonParam["print_count"].ToString();
+            string sPathFolder = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath);
+            file_name = sPathFolder + "\\plugins\\" + file_name;
+
+            List<string> names = new List<string>();
+            List<string> values = new List<string>();
+
+            foreach (var item in jsonParam)
+            {
+                string key = item.Key.ToString();
+                if (key.Equals("printer_name") || key.Equals("template_file") || key.Equals("print_count"))
+                {
+                    continue;
+                }
+                names.Add(item.Key.ToString());
+                values.Add(item.Value.ToString());
+            }
+            WrlServiceManager.PrintLabel(file_name, printer_name, names, values, print_count);
+
+            return Json(new { status = $"ok" });
+        }
+
         [Route("print_inner")]
         [HttpPost]
         [ActionFilter]

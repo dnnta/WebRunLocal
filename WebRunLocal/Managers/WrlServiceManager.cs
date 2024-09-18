@@ -79,6 +79,7 @@ namespace WebRunLocal.Managers
                 printEngine.Start();
 
                 //加载标签模板，指定打印机
+                btFormatDoc = null;
                 btFormatDoc = printEngine.Documents.Open(sLabel, sPrinter);
                 return true;
             }
@@ -111,12 +112,16 @@ namespace WebRunLocal.Managers
             try
             {
                 //开始打印
-                if (!PrintLabelStart(sLabel, sPrinter)) return false;
+                printEngine.Start();
 
+                //加载标签模板，指定打印机
+                btFormatDoc = null;
+                btFormatDoc = printEngine.Documents.Open(sLabel, sPrinter);
 
                 for (int iName = 0; iName < lstSubStringName.Count; iName++)
                 {
                     btFormatDoc.SubStrings[lstSubStringName[iName]].Value = lstValue[iName];
+                    LoggerHelper.WriteLog(string.Format("[{0}]=[{1}]", lstSubStringName[iName], lstValue[iName]));
                 }
 
                 if (string.IsNullOrEmpty(print_count))
